@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="quizdroid.kylep9.washington.edu.quizdroid" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MathIntroActivity"
+            android:label="@string/title_activity_math_intro" >
+        </activity>
+        <activity
+            android:name=".MathQuestion1"
+            android:label="@string/title_activity_math_question1" >
+        </activity>
+        <activity
+            android:name=".MathResults"
+            android:label="@string/title_activity_math_results" >
+        </activity>
+        <activity
+            android:name=".PhysicsIntroActivity"
+            android:label="@string/title_activity_physics_intro" >
+        </activity>
+        <activity
+            android:name=".MarvelIntroActivity"
+            android:label="@string/title_activity_marvel_intro" >
+        </activity>
+        <activity
+            android:name=".MathResultsActivity"
+            android:label="@string/title_activity_math_results" >
+        </activity>
+        <activity
+            android:name=".QuestionActivity"
+            android:label="@string/title_activity_question" >
+        </activity>
+    </application>
+
+</manifest>
