@@ -105,8 +105,10 @@ public class QuestionActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                                  Bundle savedInstanceState) {
             final View rootView = inflater.inflate(R.layout.fragment_question, container, false);
+            Log.i("fragments", "infalted question view: " + rootView);
+
             final Bundle args = getArguments();
-            Log.i("frag", "args for second fragment: " + args);
+            Log.i("frag", "args for second fragment: " + args.getClass());
             final QuestionList qs =  (QuestionList) args.getSerializable("questions");
             final int currentQ = qs.getCurrentIndex();
             final Question cur = qs.getQuestion(currentQ);
@@ -136,7 +138,6 @@ public class QuestionActivity extends ActionBarActivity {
                     ResultFragment result = new ResultFragment();
                     RadioGroup group = (RadioGroup) rootView.findViewById(R.id.mathoptions);
                     int selectId = group.getCheckedRadioButtonId();
-
                     if(selectId != -1) {
                         Bundle nextArgs = new Bundle();
                         qs.increaseIndex();
@@ -144,13 +145,14 @@ public class QuestionActivity extends ActionBarActivity {
 
                         RadioButton selected = (RadioButton) rootView.findViewById(selectId);
                         String selectedAnswer = selected.getText() + "";
-
-                        if (cur.getAnswers()[correctIndex].equals(selectedAnswer)) {
+                        String rightAnswer = cur.getAnswers()[correctIndex];
+                        if (rightAnswer.equals(selectedAnswer)) {
                             nextArgs.putInt("correct", correctAnswers + 1);
                         } else {
                             nextArgs.putInt("correct", correctAnswers);
                         }
-
+                        nextArgs.putString("rightAnswer", rightAnswer);
+                        nextArgs.putString("selectedAnswer", selectedAnswer);
                         result.setArguments(nextArgs);
                         getFragmentManager().beginTransaction().replace(R.id.container, result).commit();
                     }
@@ -171,22 +173,25 @@ public class QuestionActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.results_fragment, container, false);
+            Log.i("fragments", "infalted results view: " + rootView.getClass());
+
             final Bundle args = getArguments();
             final QuestionList qs =  (QuestionList) args.getSerializable("questions");
             final int total = qs.getCurrentIndex();
             final int correct = args.getInt("correct");
+            final String rightAnswer = args.getString("rightAnswer");
+            final String selectedAnswer = args.getString("selectedAnswer");
 
-            TextView correctBox = (TextView) rootView.findViewById(R.id.correctNum);
+            TextView correctBox = (TextView) rootView.findViewById(R.id.cor);
             TextView totalBox = (TextView) rootView.findViewById(R.id.totalNum);
             Button nextButton = (Button) rootView.findViewById(R.id.next);
 
-            correctBox.setText(correct);
-            totalBox.setText(total);
-
+            correctBox.setText("Chosen: " + selectedAnswer + "\nCorrect: " + rightAnswer);
+            totalBox.setText(correct + " / " + total);
             nextButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(total == qs.getQuestionList().size() - 1) {
+                    if(total == qs.getQuestionList().size()) {
                         Intent nextActivity = new Intent(getActivity(), MainActivity.class);
                         getActivity().startActivity(nextActivity);
                         getActivity().finish();

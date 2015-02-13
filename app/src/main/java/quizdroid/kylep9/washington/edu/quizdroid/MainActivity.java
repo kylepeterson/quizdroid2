@@ -49,7 +49,9 @@ public class MainActivity extends ActionBarActivity {
                 Question q1 = new Question("What is electricity?", a1, 2);
                 String[] a2 = {"gravity man", "42", "apple man", "yes"};
                 Question q2 = new Question("Who is newton", a2, 0);
-                Question[] questions = {q1, q2};
+                Question[] qs = {q1, q2};
+                QuestionList questions = new QuestionList(qs);
+
 
                 // place extras onto intent
                 nextActivity.putExtra("page-type", "topic");
@@ -74,7 +76,9 @@ public class MainActivity extends ActionBarActivity {
                 Question q3 = new Question("Who is Tony Stark?", a3, 2);
                 String[] a4 = {"My Dad", "Your Dad", "Our Dad", "I dont know my dad"};
                 Question q4 = new Question("Who is Professor X?", a4, 1);
-                Question[] questions = {q1, q2, q3, q4};
+                Question[] qs = {q1, q2, q3, q4};
+                QuestionList questions = new QuestionList(qs);
+
 
                 // place extras onto intent
                 nextActivity.putExtra("page-type", "topic");

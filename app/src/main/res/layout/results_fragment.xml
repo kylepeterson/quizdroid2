@@ -10,11 +10,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
-            android:textSize="40dp"
+            android:textSize="25dp"
             android:gravity="center|center_vertical"
             android:background="#6699CC"
             android:textColor="#FFFFFF"
-            android:id="@+id/correctNum"/>
+            android:id="@+id/cor"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
