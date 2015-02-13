@@ -27,7 +27,8 @@ public class MainActivity extends ActionBarActivity {
                 Question q1 = new Question("How many pis are in a circle?", a1, 1);
                 String[] a2 = {"1", "42", "4", "2"};
                 Question q2 = new Question("2 + 2", a2, 2);
-                Question[] questions = {q1, q2};
+                Question[] qs = {q1, q2};
+                QuestionList questions = new QuestionList(qs);
 
                 // place extras onto intent
                 nextActivity.putExtra("page-type", "topic");

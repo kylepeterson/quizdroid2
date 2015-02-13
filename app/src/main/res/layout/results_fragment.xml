@@ -1,8 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:orientation="vertical"
-    tools:context="quizdroid.kylep9.washington.edu.quizdroid.TopicFragment">
-
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
@@ -12,10 +11,10 @@
             android:layout_height="match_parent"
             android:text=""
             android:textSize="40dp"
-            android:id="@+id/topic"
             android:gravity="center|center_vertical"
             android:background="#6699CC"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:id="@+id/correctNum"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,10 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
-            android:id="@+id/description"
-            android:textSize="20dp"
+            android:textSize="40dp"
             android:gravity="center|center_vertical"
-            android:textColor="#000044" />
+            android:textColor="#000044"
+            android:id="@+id/totalNum"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,8 +38,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Begin"
-            android:id="@+id/begin"
+            android:text="Next"
+            android:id="@+id/next"
             android:textSize="40dp"
             android:background="#003366"
             android:textColor="#FFFFFF" />

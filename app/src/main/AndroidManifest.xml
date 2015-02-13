@@ -17,30 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MathIntroActivity"
-            android:label="@string/title_activity_math_intro" >
-        </activity>
-        <activity
-            android:name=".MathQuestion1"
-            android:label="@string/title_activity_math_question1" >
-        </activity>
-        <activity
-            android:name=".MathResults"
-            android:label="@string/title_activity_math_results" >
-        </activity>
-        <activity
-            android:name=".PhysicsIntroActivity"
-            android:label="@string/title_activity_physics_intro" >
-        </activity>
-        <activity
-            android:name=".MarvelIntroActivity"
-            android:label="@string/title_activity_marvel_intro" >
-        </activity>
-        <activity
-            android:name=".MathResultsActivity"
-            android:label="@string/title_activity_math_results" >
-        </activity>
-        <activity
             android:name=".QuestionActivity"
             android:label="@string/title_activity_question" >
         </activity>

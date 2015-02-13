@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:orientation="vertical"
-    tools:context="quizdroid.kylep9.washington.edu.quizdroid.QuestionFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -66,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Submit"
-            android:id="@+id/mathq1submit"
+            android:id="@+id/submit"
             android:textSize="40dp"
             android:background="#003366"
             android:textColor="#FFFFFF" />
